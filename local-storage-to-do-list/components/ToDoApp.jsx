@@ -10,12 +10,21 @@ const ToDoApp = () => {
       if (!taskLocal === null) setTaskList(taskLocal)
     }, [])
     
-   
+    const addTaskToLocal = (value) =>{
+        localStorage.setItem("listadoDeTareas",JSON.stringify(value))
+    }
+
+    const handleAddTask = () =>{
+        setTaskList([...taskList, inputUser])
+        setInputUser("")
+        addTaskToLocal([...taskList, inputUser])
+
+    }
 
   return (
     <>
     <input type='text' onChange={(e)=>{setInputUser(e.target.value)}} value={inputUser}></input>
-    <button>Añadir tarea</button>
+    <button onClick={handleAddTask}>Añadir tarea</button>
     </>
   )
 }
