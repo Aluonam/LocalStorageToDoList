@@ -1,12 +1,11 @@
 import React from 'react'
+import ToDoItem from './ToDoItem'
 
 const ToDoList = ({taskList}) => {
 
     const listadoDeTareas = taskList.map((actualElement)=>{
         return(
-            <ul>
-                <li>{actualElement}</li>
-            </ul>
+           <ToDoItem task={actualElement}></ToDoItem>
         )
     })
   return (
