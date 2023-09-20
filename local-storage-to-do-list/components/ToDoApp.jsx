@@ -26,7 +26,7 @@ const ToDoApp = () => {
     <>
     <input type='text' onChange={(e)=>{setInputUser(e.target.value)}} value={inputUser}></input>
     <button onClick={handleAddTask}>Añadir tarea</button>
-    <ToDoList taskList={taskList}></ToDoList>
+    <ToDoList taskList={taskList} setTaskList={setTaskList}></ToDoList>
     </>
   )
 }
